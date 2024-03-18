@@ -1,0 +1,29 @@
+package com.udemy.educandoweb.course.config;
+
+import com.udemy.educandoweb.course.model.User;
+import com.udemy.educandoweb.course.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import java.util.Arrays;
+
+@Configuration
+@Profile("test")
+public class TestConfig implements CommandLineRunner {
+  private UserRepository userRepository;
+
+  @Autowired
+  public TestConfig(UserRepository userRepository){
+    this.userRepository = userRepository;
+  }
+
+  @Override
+  public void run(String... args) throws Exception {
+    User userOne = new User(null, "Maria Brown", "maria@gmail.com", "988888888","123456");
+    User userTwo = new User(null, "Alex Green", "alex@gmail.com", "977777777","1234567");
+
+    this.userRepository.saveAll(Arrays.asList(userOne, userTwo));
+  }
+}
