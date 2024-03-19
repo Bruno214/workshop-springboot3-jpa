@@ -1,6 +1,6 @@
 package com.udemy.educandoweb.course.config;
 
-import com.udemy.educandoweb.course.Enum.UserStatus;
+import com.udemy.educandoweb.course.model.Enum.OrderStatus;
 import com.udemy.educandoweb.course.model.order.Order;
 import com.udemy.educandoweb.course.model.user.User;
 import com.udemy.educandoweb.course.repository.orderrepository.OrderRepository;
@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,9 +45,9 @@ public class TestConfig implements CommandLineRunner {
   public static List<Order> createdOrders() {
     User clientOne = listUsers.get(0);
     User clientTwo = listUsers.get(1);
-    Order orderOne = new Order(null, Instant.parse("2024-02-29T12:00:00Z"), clientOne);
-    Order orderTwo = new Order(null, Instant.parse("2024-01-29T12:10:18Z"),clientTwo);
-    Order orderThree = new Order(null, Instant.parse("2023-12-20T14:05:02Z"), clientOne);
+    Order orderOne = new Order(null, Instant.parse("2024-02-29T12:00:00Z"), OrderStatus.PAID, clientOne);
+    Order orderTwo = new Order(null, Instant.parse("2024-01-29T12:10:18Z"), OrderStatus.WAITING_PAYMENT, clientTwo);
+    Order orderThree = new Order(null, Instant.parse("2023-12-20T14:05:02Z"), OrderStatus.WAITING_PAYMENT, clientOne);
 
     return Arrays.asList(orderOne, orderTwo, orderThree);
   }
