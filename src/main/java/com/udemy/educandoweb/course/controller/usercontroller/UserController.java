@@ -1,7 +1,7 @@
-package com.udemy.educandoweb.course.controller;
+package com.udemy.educandoweb.course.controller.usercontroller;
 
-import com.udemy.educandoweb.course.model.User;
-import com.udemy.educandoweb.course.service.UserService;
+import com.udemy.educandoweb.course.model.user.User;
+import com.udemy.educandoweb.course.service.userservice.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

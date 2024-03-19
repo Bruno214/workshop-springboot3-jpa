@@ -1,7 +1,7 @@
-package com.udemy.educandoweb.course.service;
+package com.udemy.educandoweb.course.service.userservice;
 
-import com.udemy.educandoweb.course.model.User;
-import com.udemy.educandoweb.course.repository.UserRepository;
+import com.udemy.educandoweb.course.model.user.User;
+import com.udemy.educandoweb.course.repository.userrepository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
